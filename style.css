@@ -1,0 +1,980 @@
+html {
+    box-sizing: border-box;
+    /* background-color: #E5E5E5; */
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-Regular'),
+      url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+      url('../fonts/Montserrat-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-Bold'),
+      url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+      url('../fonts/Montserrat-Bold.woff') format('woff');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-SemiBold'),
+      url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+      url('../fonts/Montserrat-SemiBold.woff') format('woff');
+    font-display: swap;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat-ExtraBold'),
+      url('../fonts/Montserrat-ExtraBold.woff2') format('woff2'),
+      url('../fonts/Montserrat-ExtraBold.woff') format('woff');
+    font-display: swap;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  /* 	margin-left: 2px; */
+    color: var(--font2-color)
+  }
+
+  input {
+    outline: 0 !important;
+    border-bottom: 0 !important;
+  }
+  
+  
+  .list_reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .btn_reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .conteiner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 52px;
+    background-image: none;
+  }
+  
+  .flex {
+    display: flex;
+  }
+    
+
+  /* Head info */
+
+  .head {
+    background-color: #1D252E;
+  }
+
+  .head_info {
+    position: relative;
+    padding: 15px 0;
+  }
+
+  .head_info_block {
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .head_info_block_left  {
+    align-items: center;
+  }
+
+  .head_info_link {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-right: 9px;
+    border-right: 2px solid #ffffff;
+  }
+
+  .head_info_link:focus {
+    overflow: 1px solid #ffffff;
+  }
+
+  .head_info_link:hover {
+    color:#8baed7;
+  }
+
+  .head_info_link:active {
+    color:#4f76a2;
+  }
+
+  .head_info_list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .head_info_seti {
+    padding-left: 15px;
+  }
+
+  .head_info_item:not(:first-child) {
+    margin-left: 12px;
+  }
+
+  .head_item_link:focus {
+    box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.3);
+  }
+
+  .head_item_link:hover .head_item_svg  {
+    transform: translateY(-3px);
+   }
+
+
+
+  /* Кнопка языка */
+
+  
+  .head_info_lange_list {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+    background-color: #1D252E;
+  }
+
+
+  .head_info_lange_item {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-top: 7px;
+  }
+
+  
+
+  .choices__inner {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #1D252E;
+    border: none;
+    border-radius: none;
+  }
+
+  .choices[data-type*=select-one]::after {
+    right: 8.5px;
+    border-color: rgb(255, 255, 255) transparent transparent;
+  }
+
+  
+  .choices[data-type*=select-one].is-open::after {
+    border-color:transparent transparent #fff;
+    margin-bottom: -7,5px;
+  }
+  
+  .choices__list--dropdown, .choices__list[aria-expanded] {
+    top: 5px;
+    left: 5px;
+    width: 61px;
+    background-color: #1D252E;
+    border: none;
+    box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.3);
+    padding: 0 7px;
+
+  }
+
+  .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-bottom: 7px;
+    padding: 7px 0 7px 0;
+  }
+
+  .choices__item:not(:last-child) {
+    border-bottom: 1px solid #016DA6;
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: #f2f2f200;
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    max-height: auto;
+    overflow: none !important;
+    -webkit-overflow-scrolling: none;
+    will-change: none;
+  }
+
+  .choices__list--dropdown .choices__list, .choices__list[aria-expanded] .choices__list {
+    position: relative;
+    max-height: 300px;
+    overflow: none !important;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+  }
+
+
+  @media (min-width: 640px) {
+  .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
+      padding-right: 0;
+  }
+  }
+
+
+
+
+  /* Navi Head */
+
+  .nav_head {
+    padding: 7px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+ .nav_head__flex {
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .nav_logo_text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 26px;
+  color: #000000;
+ }
+
+ .nav_logo_text2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 16px;
+  letter-spacing: 1.05em;
+  color: #000000;
+ }
+
+ /* Бургер меню */
+
+ .menu_burger__open:focus {
+  outline: 2px solid #FF9900;
+  outline-offset: 5px;
+}
+
+.menu_burger__open:active .menu_burger__active rect {
+  fill: #FF9900;
+  outline: none;
+}
+
+.menu_burger {
+  position: absolute;
+  top: -561px;
+  left: -150px;
+  background: white;
+  width: 320px;
+  min-height: 480px;
+  z-index: 2;
+  visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.menu_list__burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+  padding-top: 62px;
+  line-height: 22px;
+}
+
+  .menu_list_item:not(:first-child) {
+  margin-left: 85px;
+  }
+  
+  .menu_list_item:focus {
+    border-bottom: 1px solid #1D252E;
+  }
+
+  .menu_list_item:hover {
+    transform: translateX(-3px) ;
+  } 
+
+  .menu_list_item:active {
+    border-bottom: 1px solid #1D252E;
+  }
+
+
+  .menu_burger__btm {
+    height: 23px;
+    display: flex;
+  }
+
+  .menu_list_item:not(:first-child) {
+    margin: 0;
+    margin-top: 60px;
+  }
+
+  .menu_burger__open {
+   visibility: visible;
+   top: 49px;
+   left: -50px;
+   transition: left 0.7s ease-in-out;
+  }
+
+  .menu_burger__close {
+    display: none;
+  }
+
+  .buttom_open {
+    display: none;
+  }
+
+  .buttom_close {
+    display: flex;
+  }
+
+  .btm_close {
+    display: none;
+  }
+
+  /* лупа */
+
+  .header_searh__menu {
+    max-width: 195px;
+    padding: 6px 30px;
+    border-radius: 16px;
+    border: 2px solid #FF9900;
+   
+  }
+
+  .header_searh__menu:focus {
+    outline: 2px solid #FF9900;
+
+  }
+
+  .header_searh__menu:hover {
+    background-color: #FF9900;
+  }
+
+  .header_searh__menu:hover .header_searh__text {
+    background-color: #FF9900;
+  }
+
+  .header_searh__menu:hover .menu_lupa_hover rect {
+    fill: #ffffff ; 
+  }
+
+  .header_searh__menu:hover .menu_lupa_hover path {
+    stroke: #ffffff ; 
+  }
+
+  .header_searh__text:hover::-webkit-input-placeholder {
+     color:#ffffff;
+  }
+  
+  .menu_lupa__searh {
+    z-index: 2;
+  }
+  
+  .header_searh__text {
+    font-weight: 700;
+    font-size: 16px;
+    color: #1D252E;
+    border: none;
+    padding-left: 13px;
+    width: 106px;
+  }
+  
+  .header_searh__text:focus {
+    outline: none;
+    border-bottom: 1px solid #FF9900;
+  }
+  
+
+
+
+  /*  Servises */
+
+  .servises_block {
+    flex-direction: column;
+    padding: 80px 100px 66px 100px;
+  }
+
+  .servises_block_top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .servises_zag__size {
+    font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 52px;
+  color: #1D252E;
+  }
+
+  .servises_info {
+    padding-top: 77px;
+    padding-left: 155px;
+  }
+
+  .servises_info_text {
+    font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1D252E;
+  }
+
+  /* Услуги поиск  */
+
+  .navi_searh {
+    display: inline-block;
+  }
+  
+  
+  .navi_searh__btm {
+    position: relative;
+  }
+  
+  .navi_serch__lupa {
+    position: absolute;
+    top: 0;
+    right: -40px;
+  }
+  
+  .navi_searh__menu {
+    background-color: none;
+    border: none;
+    border-bottom: 1px solid #2A3B45;
+    width: 263px;
+  }
+  
+  .navi_searh__text {
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #1D252E;
+    opacity: 0.4;
+    background: none;
+    border: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .navi_searh__text:hover {
+    border: none;
+  }
+
+
+  /* Аккардион услуг*/
+
+  .servises_product {
+    padding-top: 66px;
+  }
+
+  .servises_product_accardion {
+    width: 195px;
+    padding-right: 10px;
+  }
+
+
+  .servises_item_zag {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #0084CA;
+    cursor: pointer;
+  }
+
+  .servises_item_span:hover{
+    border-bottom:1px solid #0084CA;
+  }
+
+  .servises_item_span:focus{
+    border:1px solid #0084CA;
+  }
+
+
+  .servises_item:not(:first-child) {
+    margin-top: 12px;
+  }
+
+  .servises_item_svg {
+    margin-left: 12px;
+  }
+
+  .servises_item_zag.ui-state-active .servises_item_svg {
+    transform: rotate(180deg);
+    transition: .5s transform ease-in-out;
+  }
+  .servises_item_zag .servises_item_svg {
+    transform: rotate(0);
+    transition: .5s transform ease-in-out;
+  }
+
+
+  .servises_item_menu:not(:first-child) {
+    margin-top: 12px;
+  }
+  
+  .servises_list_menu {
+    padding-top: 12px;
+  }
+
+  .servises_item_link {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1D252E;
+  }
+
+  .servises_item_menu:hover {
+    background: #F2F2F2;
+    border-radius: 6px;   
+    padding: 3px 28px 3px 8px ;
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+
+
+  /* Крточки товаров */
+
+  .servises_card_item {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 53px 16px 60px;
+    width: 833px; 
+    min-height: 124px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin: 0;
+  }
+
+  .servises_item_left {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 500px;
+  }
+
+  .servises_card_item:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  .servises_card_zag {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1D252E;
+    padding-bottom: 20px;
+
+  }
+
+  .servises_card_btn {
+    position: relative;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    color: #2A3B45;
+    padding-right: 20px;
+  }
+  
+  .servises_card_btn:hover {
+    color: #0084CA;
+  }
+
+  .servises_card_btn:hover .servises_card_svg path {
+    stroke: #0084CA;
+  }
+
+  .servises_card_btn:hover .servises_card_svg line {
+    stroke: #0084CA;
+  }
+
+  .servises_card_btn:hover .servises_card_svg {
+    transform: translateX(7px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+ .servises_card_svg {
+  position: absolute;
+  top: 2px;
+  right: -3px;
+ }
+
+
+ .servises_item_right {
+  align-items: center;
+ }
+ 
+ .servises_right_price_cost {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: right;
+  color: #1D252E;
+ }
+
+ .servises_right_cost__size {
+  font-size: 14px;
+ }
+
+ .servises_right_price {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: right;
+  color: #1D252E;
+  margin-right: 33px;
+ }
+
+ .servises_right_price__margin {
+  margin-right: 0;
+ }
+
+ .servises_price_btn:hover .servises_price_svg circle {
+  fill: #016DA6;
+ }
+
+ .servises_price_btn:focus .servises_price_svg {
+  outline: 2px solid #016DA6;
+  border-radius: 50%;
+ }
+
+
+
+
+ /* Корзина */
+
+ .basket {
+  position: fixed;
+  display: none;
+  right: 0;
+  bottom: 0;
+  top: 600px;
+  display: none;
+  right: 0;
+  width: 520px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 28px 90px 28px 80px;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transition: top 1s ease-in-out;
+ }
+
+ .basket_block {
+  padding-bottom: 44px;
+ }
+
+ .basket_visible {
+  display: block;
+ }
+
+ .basket_open {
+  top: 0;
+  transition: top 1s ease-in-out;
+ }
+
+
+ .basket_btn {
+  position:absolute;
+  top: 12px;
+  right: 12px;
+ }
+
+ .basket_btn:focus .basket_btn__svg {
+    outline: 2px solid #016DA6;
+    border-radius: 50%;
+ }
+
+  .basket_btn:focus .basket_btn__svg path {
+    stroke: #016DA6;
+  }
+
+  .basket_btn:focus .basket_btn__svg line {
+    stroke: #016DA6;
+  }
+
+
+  .basket_btn:focus .basket_btn__svg circle {
+    stroke: #016DA6;
+  }
+
+ .basket_btn:hover .basket_btn__svg path {
+    stroke: #016DA6;
+  }
+
+  .basket_btn:hover .basket_btn__svg line {
+    stroke: #016DA6;
+  }
+
+  .basket_btn:hover .basket_btn__svg circle {
+    stroke: #016DA6;
+  }
+
+  .basket_btn_svg__open {
+    transform: rotate(180deg);
+    transition: transform .5s ease-in-out;
+  }
+
+
+ .basket_zag {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0084CA;
+  padding-bottom: 19px;
+ }
+
+ .basket_text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  color: #1D252E;
+ }
+
+ .basket_product__sum {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #1D252E;
+ }
+
+ .basket_product_quantity {
+  justify-content: space-between;
+  margin-bottom: 8px;
+ }
+
+ .basket_product_sum {
+  justify-content: space-between;
+ }
+
+ .basket_cards {
+  display: none;
+ }
+
+ .basket_cards:not(:first-child) {
+  padding-top: 29px;
+ }
+
+ .basket_card_open {
+  display: block;
+ }
+ 
+ .basket_card_zag {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #0084CA;
+  padding-bottom: 12px;
+ }
+
+ .basket_card_product {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 26px;
+  padding-bottom: 19px;
+  border-top: 1px solid #B0B0B0;
+  border-bottom: 1px solid #B0B0B0;
+ }
+ 
+ .basket_card_info {
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10px;
+ }
+
+ .basket_product__card {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1D252E;
+ }
+
+ .basket_text_card {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  color: #1D252E;
+  max-width: 228px;
+ }
+
+ .basket_btn_card {
+  justify-content: flex-end;
+ }
+
+ .basket_card_product_btn {
+  border: 1px solid #0084CA;
+  border-radius: 4px;
+  padding: 4px 7px;
+  min-width: 67px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1D252E;
+ }
+
+ .basket_card_btn_minus {
+  width: 12px;
+  height: 12px;
+  background-image: url(/img/min.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+ }
+
+ .basket_card_btn_plus {
+  width: 12px;
+  height: 12px;
+  background-image: url(/img/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+ }
+
+.basket_order {
+  justify-content: center;
+  margin-top: 60px;
+}
+
+ .basket_order_btn {
+  background-color: #0084CA;
+  border: 1px solid #FFFFFF;
+  border-radius: 40px;
+  padding: 18px 40px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+ }
+
+ .basket_order_btn:focus {
+  outline: 3px solid #016DA6;
+  outline-offset: 0px;
+  border-radius: 40px;
+ }
+
+ .basket_order_btn:hover {
+  background-color: #016DA6;
+  
+ }
+
+ /* Дубляж кнопки для карточек с корзиной */
+
+  .servises_price_number {
+    justify-content: flex-end;
+    display: none;
+  }
+
+
+  .servises_price_number__open {
+    display: block;
+  }
+
+  .servises_price__close {
+    display: none;
+  }
+
+  .servises_price__close2 {
+    display: none;
+  }
+
+  .servises_price_product_btn {
+  border: 1px solid #0084CA;
+  border-radius: 4px;
+  padding: 4px 7px;
+  min-width: 67px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #1D252E;
+ }
+
+ .servises_price_btn_minus {
+  width: 12px;
+  height: 12px;
+  background-image: url(/img/min.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 10px;
+ }
+
+ .servises_price_btn_plus {
+  width: 12px;
+  height: 12px;
+  background-image: url(/img/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+ }
